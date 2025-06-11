@@ -18,8 +18,10 @@
             </value>
         </inputParameters>
         <nameSegment>Onboarding_Step__c.Onboarding_Send_Email_Notification</nameSegment>
+        <offset>0</offset>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Status_to_Current_Onboarding_Step</name>
         <label>Assign Status to Current Onboarding Step</label>
@@ -158,6 +160,12 @@
             <stringValue>Not Started</stringValue>
         </value>
     </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <name>Check_Assignment_Type_Desired_Path_Queue</name>
         <label>Check Assignment Type - Desired Path - Queue</label>
@@ -690,6 +698,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Comment__c</field>
+            <value>
+                <elementReference>Transaction_Screen_Next_Step_Comment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Status__c</field>
             <value>
                 <stringValue>Completed</stringValue>
@@ -987,6 +1001,7 @@
         <dataType>String</dataType>
         <isCollection>true</isCollection>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <transformType>Map</transformType>
@@ -1008,6 +1023,7 @@
         <isCollection>false</isCollection>
         <objectType>Onboarding_Step__c</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Status__c</outputFieldApiName>
@@ -1065,6 +1081,7 @@ null)</formulaExpression>
         <isCollection>false</isCollection>
         <objectType>Onboarding_Step__c</objectType>
         <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
                 <outputFieldApiName>Status__c</outputFieldApiName>
